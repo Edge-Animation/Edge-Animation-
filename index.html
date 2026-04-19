@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDGE ANIMATION — Cinematic Flight Visualizer</title>
+  <meta name="description" content="Generate beautiful animated airplane travel visuals from one location to another. Perfect for reels and status videos." />
+
+  <!-- Google Fonts: Cinzel Decorative -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <!-- Tiny inline plane logo -->
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <path d="M2 18 L28 14 L24 10 L18 14 L10 6 L8 10 L14 16 L6 18 L4 22 Z"
+                  fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">EDGE ANIMATION</h1>
+          <p class="brand-tag">Cinematic flight visuals for your travel reels</p>
+        </div>
+      </div>
+
+      <nav class="header-actions">
+        <a class="btn-ghost" href="#how">How it works</a>
+        <a class="btn-ghost" href="#generator">Try it</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero container">
+    <div class="hero-text animate-fade-up">
+      <span class="eyebrow">✦ Travel Story Generator ✦</span>
+      <h2 class="hero-title">Turn any journey into a <span class="grad-text">cinematic flight</span></h2>
+      <p class="hero-sub">
+        Type a starting point and a destination. Watch your plane glide along an elegant arc.
+        Record the animation and share it as a reel or status video.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== GENERATOR ===================== -->
+  <main id="generator" class="container generator">
+    <!-- Controls -->
+    <section class="card glass controls" aria-labelledby="controls-title">
+      <h3 id="controls-title" class="card-title">Plan your flight</h3>
+
+      <div class="grid-2">
+        <div class="field">
+          <label for="from">From</label>
+          <input id="from" class="input-field" type="text" placeholder="e.g. Mumbai" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="to">To</label>
+          <input id="to" class="input-field" type="text" placeholder="e.g. Paris" autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="speed">
+          Animation speed: <span id="speedValue">6</span>s
+        </label>
+        <input id="speed" type="range" min="2" max="12" step="0.5" value="6" />
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" class="btn-primary" type="button">
+          <span class="btn-label">Generate Animation</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+        <button id="replayBtn" class="btn-ghost" type="button" disabled>↻ Replay</button>
+        <button id="recordBtn" class="btn-ghost" type="button" disabled>● Record &amp; Download</button>
+      </div>
+
+      <div class="progress-wrap" aria-hidden="true">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <p id="status" class="status-text" role="status" aria-live="polite">Ready when you are.</p>
+    </section>
+
+    <!-- Stage -->
+    <section class="card glass stage" aria-label="Flight animation stage">
+      <div id="stage" class="stage-inner">
+        <!-- SVG injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section id="how" class="container how">
+    <div class="card glass how-card animate-fade-up">
+      <h3 class="card-title">How it works</h3>
+      <ol class="steps">
+        <li><strong>Type</strong> your origin and destination.</li>
+        <li><strong>Adjust</strong> the animation speed.</li>
+        <li><strong>Generate</strong> and watch the plane fly along a smooth arc.</li>
+        <li><strong>Record</strong> a webm clip ready for your reel.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> EDGE ANIMATION · Crafted for storytellers.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
